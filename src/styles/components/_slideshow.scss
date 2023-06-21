@@ -1,0 +1,55 @@
+.slideshow__container {
+  width: 90%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  h2 {
+    text-align: center;
+  }
+}
+
+.slides {
+  display: flex;
+  flex-wrap: nowrap;
+  div {
+    min-width: 100%;
+    overflow: hidden;
+    transition: 0.3s ease all;
+    position: relative;
+    img {
+      width: 100%;
+      vertical-align: top;
+    }
+    h3 {
+      font-weight: 400;
+      background-color: rgba(0, 0, 0, 0.315);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      line-height: 3rem;
+      color: var(--input-text-bg);
+    }
+  }
+}
+
+// Botones izquierda/derecha
+.slideshow__controls {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    font-size: 2rem;
+    border: transparent;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    &:active {
+      color: black;
+    }
+  }
+}
