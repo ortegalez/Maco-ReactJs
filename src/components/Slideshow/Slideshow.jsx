@@ -44,7 +44,7 @@ const Slideshow = () => {
           hiddenTransition
         );
       };
-
+      //
       slideshow.current.addEventListener("transitionend", hiddenTransition);
     }
   };
