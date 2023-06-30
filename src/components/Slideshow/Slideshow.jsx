@@ -74,16 +74,19 @@ const Slideshow = () => {
 
   // Con el useEffect para controlar el renderizado cada vez que aparece un elemeneto nuevo en la pantalla.
   useEffect(() => {
+    // Crea una funcion de autoplay
     intervalSlideshow.current = setInterval(() => {
+      // intervalSlideshow.current = setInterval(() => {
       next();
     }, 5000);
 
     // Eliminar los intervalos cuando me paro sobre el slideshow
     slideshow.current.addEventListener("mouseenter", () => {
+      // Limpia el intervalo
       clearInterval(intervalSlideshow.current);
     });
 
-    // Volvemos a poner el intervalo cuando saquen el cursor de slideshow
+    // Reaunudar el intervalo del autoplay cuando saquen el cursor de slideshow
     slideshow.current.addEventListener("mouseleave", () => {
       intervalSlideshow.current = setInterval(() => {
         next();

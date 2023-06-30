@@ -1,0 +1,29 @@
+.MainProducts__Container {
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  article {
+    overflow: hidden;
+    position: relative;
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    h3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 99;
+      color: var(--navbar-bg);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+}
