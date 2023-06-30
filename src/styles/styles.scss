@@ -1,12 +1,12 @@
 // UI Settings
+@use "./abstracts/variables";
 @use "./base/resets";
 @use "./base/settings";
-@use "./abstracts/variables";
 @use "./abstracts/mixins";
 
 // Components
 @use "./components/navbar";
 @use "./components/searchContainer";
 @use "./components/slideshow";
-@use "./components/mainProductos";
+@use "./components/mainProducts";
 @use "./components/footer";

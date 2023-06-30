@@ -1,3 +1,5 @@
+@import "../abstracts/mediaQueries";
+
 .MainProducts__Container {
   margin: 1rem 0;
   width: 100%;
@@ -24,6 +26,20 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s ease;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .MainProducts__Container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    article {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 80%;
+      }
     }
   }
 }

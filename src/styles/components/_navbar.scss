@@ -75,6 +75,44 @@
   }
 }
 
+.navbar__item-trigger {
+  // display: none;
+  background-color: var(--dropdown-bg);
+  position: absolute;
+  z-index: 999;
+  width: 7rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  // height: max-content;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0.5rem 0;
+    li {
+      padding: 0.5rem 0;
+      a {
+        color: var(--dropdown-text);
+      }
+      &:hover a {
+        border-bottom: 2px solid var(--font-color-navbar);
+      }
+    }
+  }
+  &.active {
+    max-height: 12rem;
+  }
+}
+
+.navbar__item-trigger-botton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 @media screen and (max-width: 1024px) {
   .navbar__btn {
     visibility: visible;

@@ -1,13 +1,31 @@
 import React, { useState } from "react";
 
 import { GrClose, GrMenu } from "react-icons/gr";
-import { BsCart, BsSearch, BsPerson } from "react-icons/bs";
+import {
+  BsCart,
+  BsSearch,
+  BsPerson,
+  BsFillCaretDownFill,
+  BsFillCaretUpFill,
+} from "react-icons/bs";
+
 import logo from "../../assets/maco-logo-negro.png";
 import SearchCointainer from "../SearchContainer/SearchCointainer";
 
 const Navbar = () => {
   const [navToggle, setNavToggle] = useState(false);
   const [searchToggle, setSearchToggle] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleMouseEnter = () => {
+    setDropdownOpen(true);
+    console.log("open");
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownOpen(false);
+    console.log("close");
+  };
 
   const showNavbar = () => {
     setNavToggle(!navToggle);
@@ -32,10 +50,34 @@ const Navbar = () => {
             <a href="#">Inicio</a>
           </li>
           <li>
-            <a href="#">Buzos</a>
-          </li>
-          <li>
-            <a href="#">Remeras</a>
+            <a
+              href="#"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="navbar__item-trigger-botton"
+            >
+              <p>Productos</p>
+              {isDropdownOpen ? <BsFillCaretUpFill /> : <BsFillCaretDownFill />}
+            </a>
+            <div
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className={`navbar__item-trigger ${
+                isDropdownOpen ? "active" : ""
+              }`}
+            >
+              <ul>
+                <li>
+                  <a href="#">Remeras</a>
+                </li>
+                <li>
+                  <a href="#">Buzos</a>
+                </li>
+                <li>
+                  <a href="#">Packs</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li>
             <a href="#">Contacto</a>
