@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import sliders from "../../assets/slider_img";
 import { BsFillCaretRightFill, BsFillCaretLeftFill } from "react-icons/bs";
 
@@ -75,10 +75,14 @@ const Slideshow = () => {
   // Con el useEffect para controlar el renderizado cada vez que aparece un elemeneto nuevo en la pantalla.
   useEffect(() => {
     // Crea una funcion de autoplay
-    intervalSlideshow.current = setInterval(() => {
-      // intervalSlideshow.current = setInterval(() => {
-      next();
-    }, 5000);
+
+    // ***************************************************
+
+    // intervalSlideshow.current = setInterval(() => {
+    //   next();
+    // }, 2000);
+
+    // ***************************************************
 
     // Eliminar los intervalos cuando me paro sobre el slideshow
     slideshow.current.addEventListener("mouseenter", () => {

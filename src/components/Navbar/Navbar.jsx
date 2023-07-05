@@ -11,6 +11,7 @@ import {
 
 import logo from "../../assets/maco-logo-negro.png";
 import SearchCointainer from "../SearchContainer/SearchCointainer";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [navToggle, setNavToggle] = useState(false);
@@ -19,12 +20,12 @@ const Navbar = () => {
 
   const handleMouseEnter = () => {
     setDropdownOpen(true);
-    console.log("open");
+    // console.log("open");
   };
 
   const handleMouseLeave = () => {
     setDropdownOpen(false);
-    console.log("close");
+    // console.log("close");
   };
 
   const showNavbar = () => {
@@ -47,18 +48,18 @@ const Navbar = () => {
       <nav className={`navbar__items ${navToggle ? "active" : ""}`}>
         <ul>
           <li>
-            <a href="#">Inicio</a>
+            <NavLink to="/">Inicio</NavLink>
           </li>
           <li>
-            <a
-              href="#"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="navbar__item-trigger-botton"
-            >
-              <p>Productos</p>
+            <NavLink to="/products" className="navbar__item-trigger-botton">
+              <p
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                Productos
+              </p>
               {isDropdownOpen ? <BsFillCaretUpFill /> : <BsFillCaretDownFill />}
-            </a>
+            </NavLink>
             <div
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -80,7 +81,7 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <a href="#">Contacto</a>
+            <NavLink to="/contact">Contacto</NavLink>
           </li>
         </ul>
       </nav>

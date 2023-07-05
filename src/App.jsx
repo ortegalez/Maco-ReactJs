@@ -1,17 +1,26 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
-import MainProducts from "./components/MainProducts/MainProducts";
 import Navbar from "./components/Navbar/Navbar";
-import Slideshow from "./components/Slideshow/Slideshow";
+import ProductsContainer from "./components/ProductsContainer/ProductsContainer";
+import ContactContainer from "./components/ContactContainer/ContactContainer";
+// import MainProducts from "./components/MainProducts/MainProducts";
+// import Slideshow from "./components/Slideshow/Slideshow";
 
 function App() {
   return (
     <>
-      <Navbar />
-      {/* <Main /> */}
-      <Slideshow />
-      <MainProducts />
-      <Footer />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/contact" element={<ContactContainer />} />
+          <Route path="/products" element={<ProductsContainer />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
