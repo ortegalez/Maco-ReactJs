@@ -11,6 +11,8 @@
   display: flex;
   justify-content: space-between;
   margin: 1rem 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(49, 36, 36, 0.466);
 }
 
 .productsContainer__trigger {
@@ -93,9 +95,9 @@
   max-width: 20rem;
   overflow: hidden;
   position: relative;
-  &:hover img {
-    transform: scale(1.1);
-  }
+  // &:hover img {
+  //   transform: scale(1.1);
+  // }
 
   img {
     padding: 0.5rem;
@@ -103,5 +105,29 @@
     max-width: 20rem;
     object-fit: contain;
     transition: transform 0.3s ease;
+  }
+}
+
+// Media Query
+
+@media (max-width: 576px) {
+  .productsContainer__Container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header "
+      "sidebar"
+      "main";
+  }
+
+  .productsContainer__Aside {
+    height: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+    }
   }
 }

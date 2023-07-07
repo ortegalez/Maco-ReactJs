@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Hoddies from "../../assets/hoddies_img.js";
+import tShirt from "../../assets/tshirt.js";
 import {
   BsCart,
   BsSearch,
@@ -62,6 +63,23 @@ const ProductsContainer = () => {
       </aside>
       <section className="productsContainer__Main">
         {Hoddies.map((item) => (
+          <a href="#" key={item.id}>
+            <article className="productsContainer__Main-Card">
+              <figure>
+                <img src={item.img} alt={item.title} />
+              </figure>
+              <div>
+                <h3>{item.title}</h3>
+                <span>${item.price}</span>
+                <p>3 Cuotas sin interés ${item.price / 3}</p>
+              </div>
+              {/* <div className="card-size">
+                <p>{item.size}</p>
+              </div> */}
+            </article>
+          </a>
+        ))}
+        {tShirt.map((item) => (
           <a href="#" key={item.id}>
             <article className="productsContainer__Main-Card">
               <figure>
